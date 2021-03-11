@@ -2,7 +2,7 @@ import React from 'react';
 
 import './header.styles.scss';
 
-import {BrowserRouter, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import {connect} from 'react-redux';
 
@@ -12,7 +12,6 @@ import {auth} from '../../firebase/firebase.utils';
 
 const Header= ({currentUser}) => (
     <div className='header'>
-    <BrowserRouter>
         <Link className='logo-container' to='/'>
             <Logo className='logo' />
         </Link>
@@ -29,12 +28,11 @@ const Header= ({currentUser}) => (
                     SIGN OUT
                 </div>
                 ):(
-                <Link className='option' to='/signin'> 
+                <Link className='option' to='/signin' > 
                     SIGN IN 
                 </Link>
                 )}
         </div>
-        </BrowserRouter>
     </div>
 );
 
